@@ -4,258 +4,9 @@
 <html>
 	<head>
 		<title>Excluir Brinquedo</title>
-		<!--<link rel="stylesheet" type="text/css" href="css/home_page.css">-->
+		<link  rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="style/estrutura.css">
 		<style>
-			div {
-				border: 1px solid black;
-			}
-		
-			#parteSuperior {
-				background-color: black;
-				height: 10px;
-			}
-			
-			#cabecalho {
-				height: 120px;
-				background: yellow;
-			}
-			
-			#paginas_lateralEsquerda {
-				background-color: #808080;
-				height: 540px;
-				width: 180px;
-				text-align: right;
-				float: left;
-			}
-			
-			#conteudo {
-				background-color: #1E90FF;
-				height:540px;
-				width: 840px;
-				color: black;
-				font-family: calibri;
-				font-size: 15px;
-				text-align: center;
-				float: right;
-			}
-			
-			.titulo {
-				font-size: 20px;
-			}
-			
-			#rodape {
-				height: 40px;
-				background: yellow;
-				clear: both;
-			}	
-			
-			#principal {
-				width: 1024px;
-				margin: 0px auto;
-			}
-			
-			body {
-				margin: 0px;
-				background: url(img/fundo.jpg);
-				background-size: cover;
-			}
-			
-			#nomePagina {
-				text-align:center;
-				margin: 0px ;
-				font-family: verdana;
-				font-size: 25px;
-				color: purple;
-			}
-			
-			#logo {
-				position: absolute; 
-				top: 16px;
-				width: 180px;
-				height: 118px;
-			}
-			
-			#logo_rodape {
-				position: relative;
-				top: -1px;
-				width: 81px;
-				height: 45px;
-			}
-			
-			#logo_fale {
-				height: 21px;
-				width: 21px;
-			}
-			
-			#faleConosco_ {
-				border: 0px;
-				position: relative;
-				left: 0px;
-				font-family: Harlow Solid;
-				font-size: 20px;
-				color: black;
-				background: rgba(0, 0, 0, 0.0);
-			}
-			
-			#dicas_ {
-				border: 0px;
-				position: relative;
-				left: 0px;
-				font-family: Harlow Solid;
-				font-size: 20px;
-				color: black;
-				background: rgba(0, 0, 0, 0.0);
-			}
-			
-			#logo_dicas {
-				height: 21px;
-				width: 21px;
-			}
-			
-			#cruzeiros_ {
-				border: 0px;
-				position: relative;
-				left: 0px;
-				font-family: Harlow Solid;
-				font-size : 20px;
-				color: black;
-				background: rgba(0, 0, 0, 0.0);
-			}
-			
-			#logo_cruzeiros {
-				height: 21px;
-				width: 21px;
-			}
-			
-			#pacotes_ {
-				border: 0px;
-				position: relative;
-				left: 0px;
-				widht: 158px;
-				font-family: Harlow Solid;
-				font-size: 20px;
-				color: black;
-				background: rgba(0, 0, 0, 0.0);
-			}
-			
-			#logo_pacotes {
-				height: 21px;
-				width: 21px;
-			}
-			
-			#hospedagem_ {
-				border: 0px;
-				position: relative;
-				left: 0px;
-				font-family: Harlow Solid;
-				font-size: 20px;
-				color: black;
-				background: rgba(0, 0, 0, 0.0);
-			}
-			
-			#logo_hospedagem {
-				height: 21px;
-				width: 21px;
-			}
-			
-			#voos_ {
-				border: 0px;
-				position: relative;
-				left: -2px;
-				font-family: Harlow Solid;
-				font-size: 20px;
-				color: black;
-				background: rgba(0, 0, 0, 0.0);
-			}
-		
-			#logo_voos {
-				height: 21px;
-				width: 21px;
-			}
-			
-			#faleConosco_rodape {
-				border: 0px;
-				position: relative;
-				left: -4px;
-				top: 5px;
-				float: right;
-				font-family: Harlow Solid;
-				font-size: 20px;
-				color: white;
-				background: rgba(0, 0, 0, 0.0);
-			}
-			
-			#instagram_rodape {
-				clear: both;
-				position: relative;
-				top: -19px;
-				left: 765px;
-				border: 0px;
-				background: rgba(0, 0, 0, 0.0);
-			}
-			
-			#logo_insta {
-				height: 39px;
-			}
-			
-			#whatsapp_rodape {
-				position: relative;
-				top: -19px;
-				left: 654px;
-				border: 0px;
-				background: rgba(0, 0, 0, 0.0);
-			}
-			
-			#logo_whats {
-				height: 39px;
-			}
-			
-			#cruzeiro_conteudo {
-				background: black;
-				width: 280px;
-				height: 242px;
-				position: relative;
-				top: 60px;
-				left: 70px;
-			}
-			
-			#hospedagem_conteudo {
-				background: black;
-				width: 280px;
-				height: 242px;
-				position: relative;
-				top: -184px;
-				left: 480px;
-			}
-			
-			a {color:inherit;}
-			
-			a.classe1:link, a:visited, a:hover, a:active{
-				text-decoration: none;
-			}
-			
-			#conteudo {
-				overflow: auto;
-			}
-			
-			#hospedagem2_conteudo {
-				background: black;
-				width: 280px;
-				height: 242px;
-				position: relative;
-				top: -324px;
-				left: 480px;
-			}
-			
-			#cruzeiro2_conteudo {
-				background: black;
-				width: 280px;
-				height: 242px;
-				position: relative;
-				top: -80px;
-				left: 70px;
-			}
-			
 			h2{
 				align: center;
 				color: Black;
@@ -263,7 +14,6 @@
 			
 			th{
 				font-size: 25px;	
-				float: left;
 				font-weight: normal;
 				color: black;			
 			}
@@ -273,29 +23,41 @@
 				top: 150px;
 				right: 15px;
 			}
+			
+			.campo{
+				border: 0;
+				background: none;
+				display: block;
+				margin: 20px;
+				text-align: center;
+				border: 2px solid #049DD9;
+				padding: 14px 10px;
+				width: 180px;
+				outline: none;
+				color: white;
+				border-radius: 24px;
+				transition: 0.25s;
+			}
+			
+			.campo:focus{
+				border-color: #FE640B;				
+			}
 		</style>
 	</head>
 	<body>
 		<div id="principal">
-			<div id="parteSuperior">
-			</div>
-			<div id="cabecalho">
-			
-			<a href="index.jsp">
-			<img src="img/Logo.png" id="logo">
-			</a>	
+			<div id="cabecalho">		
+				<a href="indexOperador.jsp">
+					<img src="img/Logo.png" id="logo">
+				</a>	
 				<span id="nomePagina">
-					<h1>Toy Kingdon</h1>
-				</span>	
-				
-			
-				
-				
+					<img src="img/NomePag.png" id="nomePagina">
+				</span>			
 			</div>
 			
-		    <div id="paginas_lateralEsquerda">
-				<span id="faleConosco">
-					<button id="faleConosco_">
+		    <div id="barrinha">
+				<span class="botaoEsquerda">
+					<button id="incluir_" class="btnEsquerda">
 						<a href="incluir.jsp"  class="classe1"> 
 						Incluir
 						</a>
@@ -304,8 +66,8 @@
 				
 				<br><br>
 				
-				<span id="dicas">
-					<button id="dicas_">
+				<span class="botaoEsquerda">
+					<button id="atualizar_" class="btnEsquerda">
 						<a href="atualizar.jsp"  class="classe1">
 						Atualizar
 						</a>
@@ -314,8 +76,8 @@
 				
 				<br><br>
 				
-				<span id="cruzeiros">
-					<button id="cruzeiros_">
+				<span class="botaoEsquerda">
+					<button id="consultar_" class="btnEsquerda">
 						<a href="consultar.jsp"  class="classe1">
 						Consultar
 						</a>
@@ -324,8 +86,8 @@
 				
 				<br><br>
 				
-				<span id="pacotes">
-					<button id="pacotes_">
+				<span class="botaoEsquerda">
+					<button id="excluir_" class="btnEsquerda">
 						<a href="excluir.jsp"  class="classe1"> 
 						Excluir
 						</a>
@@ -334,12 +96,22 @@
 				
 				<br><br>
 				
-				  <span id="hospedagem">
-					<button id="hospedagem_">
+				  <span class="botaoEsquerda">
+					<button id="listar_" class="btnEsquerda">
 						<a href="ServletBrinquedo?cmd=listar" class="classe1 id="teste">
 						Listar
 						</a>
 					</button>	
+				</span>
+				
+				<br><br>
+				
+				<span class="botaoEsquerda">
+					<button id="cadastro_" class="btnEsquerda">
+						<a href="cadastro.jsp"  class="classe1"> 
+						Cadastro
+						</a>
+					</button>
 				</span>
 					
 			</div>
@@ -347,24 +119,24 @@
 			<div id="conteudo" >
 				    <center>
 				    <h1>Excluir Brinquedos</h1>
-        <table id="tabela">
-            <form action="ServletBrinquedo?cmd=exc" method="post">
-            <tbody>
-                <tr>
-                    <th>Nome do Brinquedo:</th>
-                    <td>
-                        <input type="text" name="id" size="10" maxlenght="10" />
-                    </td>
-                </tr>
-
-                <tr>
-                    <td colspan="4" align="center"><input type="submit" value="Enviar"></td>
-                </tr>
-
-            </tbody>
-           </form>
-        </table>
-    </center>
+			        <table id="tabela" border="0">
+			            <form action="ServletBrinquedo?cmd=exc" method="post">
+			            <tbody>
+			                <tr>
+			                    <th>Nome do Brinquedo:</th>
+			                    <td>
+			                        <input type="text" name="id" size="20" maxlenght="10" class="campo">
+			                    </td>
+			                </tr>
+			
+			                <tr>
+			                    <td colspan="4" align="center"><input type="submit" value="Excluir" class="botao"></td>
+			                </tr>
+			
+			            </tbody>
+			           </form>
+			        </table>
+    			</center>
 			</div>
 			
 			<div id="rodape">

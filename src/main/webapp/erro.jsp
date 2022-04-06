@@ -3,46 +3,33 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
-		<title>Consultar Produtos</title>
-		<link  rel="stylesheet" href="style.css">
+		<title>Toy Kingdon</title>
+		<link  rel="stylesheet" href="style/style.css">
 		<link rel="stylesheet" href="style/estrutura.css">
 		<style>
-			h2{
-				align: center;
-				color: Black;
+			.box{
+				background: linear-gradient(rgba(57, 20, 175, 0.623),rgba(33, 7, 114, 0.781));
 			}
 			
-			th{
-				font-size: 25px;	
-				font-weight: normal;
-				color: black;			
-			}
-			
-			#tabela{
-				position: relative;
-				top: 150px;
-				right: 15px;
-			}
-			
-			.campo{
-				border: 0;
+			#telaPrincipal{
+				border:0;
 				background: none;
 				display: block;
-				margin: 20px;
+				margin: 20px auto;
 				text-align: center;
-				border: 2px solid #049DD9;
+				border: 2px solid  #049DD9;
 				padding: 14px 10px;
-				width: 150px;
+				width: 200px;
 				outline: none;
 				color: white;
 				border-radius: 24px;
 				transition: 0.25s;
-			}
+				cursor: pointer;
+				text-decoration: none;
+			}	
 			
-			.campo:focus{
-				width: 200px;
-				border-color: #FE640B;
-				
+			#telaPrincipal:hover{
+				border-color: #FE640B;	
 			}
 		</style>
 	</head>
@@ -50,15 +37,16 @@
 		<div id="principal">
 			<div id="cabecalho">
 			
-			<a href="indexOperador.jsp">
-				<img src="img/Logo.png" id="logo">
+			<a href="index.jsp">
+			<img src="img\Logo.png" id="logo">
 			</a>	
-			<span id="nomePagina">
-				<img src="img/NomePag.png" id="nomePagina">
-			</span>	
+				<span id="nomePagina">
+					<img src="img/NomePag.png" id="nomePagina">
+				</span>			
 			</div>
 			
 		    <div id="barrinha">
+				
 				<span class="botaoEsquerda">
 					<button id="incluir_" class="btnEsquerda">
 						<a href="incluir.jsp"  class="classe1"> 
@@ -110,40 +98,22 @@
 				<br><br>
 				
 				<span class="botaoEsquerda">
-					<button id="cadasdtro_" class="btnEsquerda">
+					<button id="cadastro_" class="btnEsquerda">
 						<a href="cadastro.jsp"  class="classe1"> 
 						Cadastro
 						</a>
 					</button>
-				</span>
-					
+				</span>	
+			</div>	
+			<div id="conteudo">
+				<div class="box">
+					<h2>A sua solicitação não pode ser realizada!</h2>
+					<a href="index.jsp" class="classe1"><input id="telaPrincipal" type="button" value="Voltar a tela principal"></a>
+				</div>
 			</div>
-			
-			<div id="conteudo" >
-				 <center>
-				 	<h1>Consultar Brinquedos</h1>
-			     	<table id="tabela" border="0">
-			            <form action="ServletBrinquedo?cmd=con" method="post">
-			            <tbody>
-			                <tr>
-			                    <th>Nome do Brinquedo:</th>
-			                    <td>
-			                        <input type="text" name="id" size="20" maxlenght="10" required class="campo">
-			                    </td>
-			                </tr>
-			
-			                <tr>
-			                    <td colspan="2" align="center"><input type="submit" value="Consultar" class="botao"></td>
-			                </tr>
-			
-			            </tbody>
-			           </form>
-			     	</table>
-			     </center>
-			</div>
-			
+		
 			<div id="rodape">
-				<img src="img/LogoRodape.png" id="logo_rodape">
+				<img src="img\LogoRodape.png" id="logo_rodape">
 			</div>
 		</div>
 	</body>

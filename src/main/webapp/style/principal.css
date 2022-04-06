@@ -1,0 +1,93 @@
+			div {
+				
+			}
+			
+			#logo {
+				position: absolute; 
+				top: 6px;
+				width: 180px;
+				height: 118px;
+			}
+			
+			#logo_rodape {
+				position: relative;
+				top: -1px;
+				left: 2px;
+				width: 81px;
+				height: 43px;
+			}
+			
+			#parteSuperior {
+				background-color: black;
+				height: 1px;
+			}
+			
+			#cabecalho {
+				height: 120px;
+				background: #FFFF3F;
+			}
+			
+			#barrinha {
+				display: flex;
+				justify-content: center;
+				Justify: space-between;
+				background: #FFFF3F;
+				height: 20px;
+				width: 100%;
+				text-align: center;
+				font-size: 20px;
+			}
+			
+			#conteudo {
+				background: linear-gradient(rgba(57, 20, 175, 0.623),rgba(33, 7, 114, 0.781) );		
+				height: 607px;
+				width: 100%;
+				color: white;
+				font-family: calibri;
+				font-size: 15px;
+				text-align: center;
+				float: right;
+			}
+			
+			
+			.titulo {
+				font-size: 20px;
+			}
+			
+			#rodape {
+				height: 40px;
+				background: yellow;
+				clear: both;
+			}	
+			
+			#principal {
+				width: 1440px;
+				height: 100%;
+				margin: 0px auto;
+				border: 0px;
+			}
+			
+			body {
+				margin: 0px;
+				background: url(img/fundo.jpg);
+				background-size: cover;
+				border: 0px;
+			}
+			
+			#nomePagina {
+				display: flex;
+				justify-content: center;
+				margin: 0px ;
+				height: 118px;
+			}
+			
+
+			a {color:inherit;}
+			
+			a.classe1:link, a:visited, a:hover, a:active{
+				text-decoration: none;
+			}
+			
+			#conteudo {
+				overflow: auto;
+			}

@@ -2,6 +2,7 @@ package br.edu.unicid.bean;
 
 import java.awt.Image;
 import java.awt.image.BufferedImage;
+import java.text.DecimalFormat;
 import java.util.Date;
 
 public class Brinquedo {
@@ -16,16 +17,12 @@ public class Brinquedo {
 	private double precoBrinquedo;
 	private int parcelas;
 	private String descricao;
-	//private Image img;
+	private String img;
+	private double parcelado;
 	
-	private int caAluno;
-	private String nomeAluno;
-	private String emailAluno;
-	private Date dtaNasc;
-	private int idadeAluno;
-	private String endAluno;
+	
 
-	public Brinquedo(int idBrinquedo, String nomeBrinquedo, String marcaBrinquedo, String categoriaBrinquedo, String faixaEtaria, double precoBrinquedo, int parcelas, String descricao) {
+	public Brinquedo(int idBrinquedo, String nomeBrinquedo, String marcaBrinquedo, String categoriaBrinquedo, String faixaEtaria, double precoBrinquedo, int parcelas, String descricao, String img) {
 		this.idBrinquedo = idBrinquedo;
 		this.nomeBrinquedo = nomeBrinquedo;
 		this.marcaBrinquedo = marcaBrinquedo;
@@ -34,8 +31,10 @@ public class Brinquedo {
 		this.precoBrinquedo = precoBrinquedo;
 		this.parcelas = parcelas;
 		this.descricao = descricao;
-		//this.img = img;
+		this.img = img;
 	}
+	
+	DecimalFormat numberFormat = new DecimalFormat("#.00");
 	
 	public Brinquedo() {
 	}
@@ -96,72 +95,15 @@ public class Brinquedo {
 		this.descricao = descricao;
 	}
 	
-//	public Image getImg() {
-//		return img;
-//	}
-//	public void setImg() {
-//		this.img = img;
-//	}
-	
-	
-	/*public Aluno(int caAluno, String nomeAluno, String emailAluno, Date dtaNasc, String endAluno, int idadeAluno) {
-		this.caAluno = caAluno;
-		this.nomeAluno = nomeAluno;
-		this.emailAluno = emailAluno;
-		this.dtaNasc = dtaNasc;
-		this.endAluno = endAluno;
-		this.idadeAluno = idadeAluno;
+	public String getImg() {
+		return img;
+	}
+	public void setImg(String string) {
+		this.img = img;
 	}
 
-	public Aluno() {
-	}
-
-	public int getCaAluno() {
-		return caAluno;
-	}
-
-	public void setCaAluno(int caAluno) {
-		this.caAluno = caAluno;
-	}
-
-	public String getNomeAluno() {
-		return nomeAluno;
-	}
-
-	public void setNomeAluno(String nomeAluno) {
-		this.nomeAluno = nomeAluno;
-	}
-
-	public String getEmailAluno() {
-		return emailAluno;
-	}
-
-	public void setEmailAluno(String emailAluno) {
-		this.emailAluno = emailAluno;
-	}
-
-	public Date getDtaNasc() {
-		return dtaNasc;
-	}
-
-	public void setDtaNasc(Date dtaNasc) {
-		this.dtaNasc = dtaNasc;
-	}
-
-	public int getIdadeAluno() {
-		return idadeAluno;
-	}
-
-	public void setIdadeAluno(int idadeAluno) {
-		this.idadeAluno = idadeAluno;
-	}
-
-	public String getEndAluno() {
-		return endAluno;
-	}
-
-	public void setEndAluno(String endAluno) {
-		this.endAluno = endAluno;
-	}*/
-
+	public String getParcelado() {
+		  this.parcelado = precoBrinquedo/(double)parcelas;	  
+		  return String.format("%.2f", parcelado);
+	}	
 }

@@ -1,31 +1,30 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@page contentType="text/html"%>
+<%@page pageEncoding="ISO-8859-1"%>
+<%@page import="java.text.SimpleDateFormat"%>
 <html>
 	<head>
+		<title>Consultar Brinquedos</title>
 		<link  rel="stylesheet" href="style.css">
 		<link rel="stylesheet" href="style/estrutura.css">
-		<title>Incluir Brinquedos</title>
-		<style>
+		<style>			
+			a.botao:link, a:visited, a:hover, a:active{
+				text-decoration: none;
+			}
+			
 			#tabela{
 				position: relative;
 				right: 10px;
 			}
 			
 			th{
-				font-size: 30px;
+				font-size: 30px;	
 				font-weight: normal;			
 			}
 			
-			h3{
-				font-size: 30px;
-				font-weight: normal;			
-			}
-
 			#preco{
 				font-size: 20px;
 			}
-	
+			
 			.campo{
 				border: 0;
 				background: none;
@@ -41,7 +40,7 @@
 				transition: 0.25s;
 			}
 			
-			.campo:focus, .campoImg:hover{
+			.campo:focus, .campoImg:focus{
 				border-color: #FE640B;
 				
 			}
@@ -60,22 +59,7 @@
 				color: black;
 				border-radius: 24px;
 				transition: 0.25s;
-				font-size: 20px;
 			}
-			
-			select option {
-			    background: #049DD9;
-			}
-			
-			input[type="file"]{
-				display: none;
-			}
-			
-			#insira{
-				position: relative;
-				top: 85px;
-			}
-
 		</style>
 	</head>
 	<body>
@@ -83,10 +67,10 @@
 			<div id="cabecalho">	
 				<a href="indexOperador.jsp">
 					<img src="img\ProjetoJava.png" id="logo">
-				</a>
+				</a>	
 				<span id="nomePagina">
 					<img src="img/NomePag.png" id="nomePagina">
-				</span>			
+				</span>				
 			</div>
 			
 		    <div id="barrinha">
@@ -151,46 +135,35 @@
 			</div>
 			
 			<div id="conteudo" >
-				<h1 id="TituloPag">Cadastro de Brinquedo</h1>
-				<center>
-					<table border="0" id="tabela">
-						<form action="ServletBrinquedo" method="post">
+
+				<h1 align="center">Consulta de Brinquedos</h1>
+				<jsp:useBean id="brinquedo" scope="session" class="br.edu.unicid.bean.Brinquedo" />
+				<form>
+					<center>
+						<table border="0" id="tabela">
+						<form action="ServletBrinquedo" method="get">
 							<input type="hidden" name="cmd" value="incluir"> <br/>
 							<input type="hidden" name="id" value="0">
-				
-								<tr>
-									<th>Nome:</th>
-				 					<td><input type="text" name="Nome" maxlength="30" required class="campo"></td>
 							
-									<th>Marca:</th>
-									<td><input type="text" name="Marca" size="15" maxlength="30" class="campo"></td>
-								
-									<th>Categoria:</th>
-										<td><select type="text" name="Categoria" class="campo"> 
-											<option value="null"></option>
-											<option value="acao">Ação</option>
-									  		<option value="aventura">Aventura</option>
-									  		<option value="carros">Carros</option>
-									  		<option value="bonecas">Bonecas</option>
-									  		<option value="pelucia">Bichos de Pelúcia</option>
-									  		<option value="educativos">Brinquedos Educativos</option>
-									  		<option value="tabuleiro">Jogos de Tabuleiro</option>
-									  		<option value="games">Games</option> 
-									 	</select>
-									 </td>
-								</tr>
+							<tr>
+			 					<th>Nome:</th>
+								<td><input type="text" name="Nome" size="20" maxlength="30" required value="<%= brinquedo.getNomeBrinquedo()%>" readonly class="campo"></td>
+								 <th>Marca:</th>
+								<td><input type="text" name="Marca" size="15" maxlength="30" value="<%= brinquedo.getMarcaBrinquedo()%>"readonly class="campo"></td>
+								<th>Categoria:</th>
+								<td><input type="text" name="Categoria" class="campo" value=<%= brinquedo.getCategoriaBrinquedo()%> readonly>
+								 </td>
+							</tr>
 							
 							<tr><td></td></tr>
 							<tr><td></td></tr>
 							
 							<tr>
 								<th>Faixa Etária:</th>
-								<td><input type="text" name="FaixaEtaria" size="15" maxlength="30" class="campo"></td>
+								<td><input type="text" name="FaixaEtaria" size="15" maxlength="30" value="<%= brinquedo.getFaixaEtaria()%>" readonly class="campo"></td>
 								
 								<th>Imagem:</th>
-								<td colspan="4" rowspan="7"><label class="campoImg"><span id="insira">Inserir imagem</span><input type="file" name="Img" size="30" maxlength="30" class="campoImg"></label></td>
-							</tr>
-								
+								<td colspan="4" rowspan="7"><img src="img/<%= brinquedo.getImg() %>" class="campoImg"></td>
 							</tr>
 							
 							<tr><td></td></tr>
@@ -198,7 +171,7 @@
 							
 							<tr>
 								<th>Preço:</th>
-								<td><input type="text" name="Preco"  size="12" maxlength="30" required class="campo"></td>
+								<td><input type="text" name="Preco"  size="12" maxlength="30" required value="<%= brinquedo.getPrecoBrinquedo()%>" readonly class="campo"></td>
 							</tr>
 							
 							<tr><td></td></tr>
@@ -206,21 +179,7 @@
 							
 							<tr>
 								<th>Parcelas:</th>
-								<td><select type="text" name="Parcelas" class="campo"> 
-										<option value="null"></option>
-										<option value="1">1x S/juros</option>
-								  		<option value="2">2x S/juros</option>
-								  		<option value="3">3x S/juros</option>
-								  		<option value="4">4x S/juros</option>
-								  		<option value="5">5x S/juros</option>
-								  		<option value="6">6x S/juros</option>
-								  		<option value="7">7x S/juros</option>
-								  		<option value="8">8x S/juros</option>
-								  		<option value="9">9x S/juros</option>
-								  		<option value="10">10x S/juros</option>
-								  		<option value="11">11x S/juros</option>
-								  		<option value="12">12x S/juros</option>
-								 	</select>
+								<td><input type="text" name="Parcelas" class="campo" value="<%= brinquedo.getParcelas()%>" readonly>
 								 </td>
 							</tr>
 							
@@ -229,16 +188,16 @@
 							
 							<tr>
 								<th>Descrição:</th>
-								<td colspan="6"><input type="text" name="Descricao" maxsize="30" maxlength="100" class="campo"></td>
+								<td colspan="6"><input type="text" name="Descricao" maxsize="30" maxlength="30" value="<%= brinquedo.getDescricao()%>" readonly class="campo"></td>
 							</tr>
-			
 							
 							<tr>
-								<td colspan="6" align="center"><input type="submit" value="Cadastrar" class="botao"></td>
+								<td colspan="3" align="center"><a href="indexOperador.jsp" class="botao">Página Principal</a></td>
+								<td colspan="3" align="center"><a href="consultar.jsp" class="botao">Nova Consulta</a></td>
 							</tr>
-						</form>
-					</table>
-				</center>
+						</table>
+					</center>
+				</form>
 			</div>
 			
 			<div id="rodape">

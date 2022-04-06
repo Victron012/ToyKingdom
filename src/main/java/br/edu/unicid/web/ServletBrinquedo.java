@@ -21,27 +21,13 @@ import jakarta.servlet.http.HttpSession;
 @WebServlet("/ServletBrinquedo")
 public class ServletBrinquedo extends HttpServlet {
 
-	 private Date strToDate(String data) throws Exception {
-	        if (data == null) {
-	            return null;
-	        }
 
-	        Date dataF = null;
-	        try {
-	            DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-	            long timestamp = dateFormat.parse(data).getTime();
-	            dataF = new Date(timestamp);
-	        } catch (ParseException pe) {
-	            throw pe;
-	        }
-	        return dataF;
-	    }
-
-	    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-	    throws ServletException, IOException {
-	        response.setContentType("text/html;charset=UTF-8");
+	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+		    throws ServletException, IOException {
+		        response.setContentType("text/html;charset=UTF-8");
 	        // a variável cmd indica o tipo de ação - incluir, alterar, consulta.....
 	        String cmd = request.getParameter("cmd");
+	        String categoria = request.getParameter("categoria");
 	        // cria um objeto dao - CRUD
 	        BrinquedoDao dao;
 	        // cria um objeto do tipo aluno
@@ -61,6 +47,10 @@ public class ServletBrinquedo extends HttpServlet {
                 } catch (Exception ex) {
 	                ex.printStackTrace();
 	            }
+	        }else {// erro caso o cmd for NULL
+	        	RequestDispatcher rd = null;
+            	rd = request.getRequestDispatcher("erro.jsp");
+            	rd.forward(request, response);
 	        }
 	        try {
 	        	// cria a instancia do objeto dao
@@ -72,47 +62,62 @@ public class ServletBrinquedo extends HttpServlet {
 	                // cria uma sessão para encaminhar a lista para uma JSP
 	                request.setAttribute("brinquedoList", brinquedoList);
 	                // redireciona para a JSP mostraAlunosCads
-	                rd = request.getRequestDispatcher("/mostrarAlunoCads.jsp");
+	                rd = request.getRequestDispatcher("/mostrarBrinquedos.jsp");
 	            }
 	            
 	            // incluir aluno
 	            else if (cmd.equalsIgnoreCase("incluir")) {
 	                dao.salvar(brinquedo);
-	                rd = request.getRequestDispatcher("ServletBrinquedo?cmd=listar");
+	                rd = request.getRequestDispatcher("/incluir.jsp");
 	             
 	            // consulta aluno para exclusão    
 	            } else if (cmd.equalsIgnoreCase("exc")) {
 	                brinquedo = dao.procurarBrinquedo(brinquedo.getIdBrinquedo());
 	                HttpSession session = request.getSession(true);
 	                session.setAttribute("brinquedo", brinquedo);
-	                rd = request.getRequestDispatcher("/formExcAluno.jsp");
+	                rd = request.getRequestDispatcher("/formExcBrinquedo.jsp");
 	             
 	            // exclui aluno
 	            } else if (cmd.equalsIgnoreCase("excluir")) {
 	                dao.excluir(brinquedo);
-	                rd = request.getRequestDispatcher("ServletBrinquedo?cmd=listar");
+	                rd = request.getRequestDispatcher("/indexOperador.jsp");
 	            
 	            // consulta aluno para alteração
 	            }  else if (cmd.equalsIgnoreCase("atu")) {
 	                brinquedo = dao.procurarBrinquedo(brinquedo.getIdBrinquedo());
 	                HttpSession session = request.getSession(true);
 	                session.setAttribute("brinquedo", brinquedo);
-	                rd = request.getRequestDispatcher("/formAtuAluno.jsp");
+	                rd = request.getRequestDispatcher("/formAtuBrinquedo.jsp");
 	             
 	            // consulta aluno
 	            } else if (cmd.equalsIgnoreCase("con")) {
 	                brinquedo = dao.procurarBrinquedo(brinquedo.getIdBrinquedo());
 	                HttpSession session = request.getSession(true);
 	                session.setAttribute("brinquedo", brinquedo);
-	                rd = request.getRequestDispatcher("/formConAluno.jsp");
+	                rd = request.getRequestDispatcher("/formConBrinquedo.jsp");
 	            
 	             // altera aluno    
 	            } else if (cmd.equalsIgnoreCase("atualizar")) {
 	                dao.atualizar(brinquedo);
-	                rd = request.getRequestDispatcher("ServletBrinquedo?cmd=listar");
+	                rd = request.getRequestDispatcher("/indexOperador.jsp");
+	            
+	            
+	            } else if (cmd.equalsIgnoreCase("pag")) {
+	            	brinquedo = dao.procurarBrinquedo(brinquedo.getIdBrinquedo());
+	                HttpSession session = request.getSession(true);
+	                session.setAttribute("brinquedo", brinquedo);
+	                rd = request.getRequestDispatcher("/mostrarPaginaBrinquedo.jsp");
+	            
+	            } else if (cmd.equalsIgnoreCase("cat")) {
+	                List brinquedoList = dao.categoriaBrinquedo(categoria);
+	                request.setAttribute("brinquedoList", brinquedoList);
+	                rd = request.getRequestDispatcher("/mostrarBrinquedos.jsp");
+	            }    
+	            
+	            
 	            
 	            // direciona para a página principal
-	            } else if (cmd.equalsIgnoreCase("principal")) {
+	             else if (cmd.equalsIgnoreCase("principal")) {
 	                rd = request.getRequestDispatcher("/index.jsp");
 	            }            
 	            // executa a ação de direcionar para a página JSP

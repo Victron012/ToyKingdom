@@ -4,40 +4,55 @@
 <html>
 	<head>
 		<title>Toy Kingdon</title>
-		<!--<link rel="stylesheet" type="text/css" href="css/home_page.css">-->
+		<link  rel="stylesheet" href="/style.css">
 		<style>
-			div {
-				border: 1px solid black;
+			#logo {
+				position: absolute; 
+				top: 6px;
+				width: 180px;
+				height: 118px;
 			}
-		
+			
+			#logo_rodape {
+				position: relative;
+				top: -1px;
+				left: 2px;
+				width: 81px;
+				height: 43px;
+			}
+			
 			#parteSuperior {
 				background-color: black;
-				height: 10px;
+				height: 1px;
 			}
 			
 			#cabecalho {
 				height: 120px;
-				background: yellow;
+				background: #FFFF3F;
 			}
 			
-			#paginas_lateralEsquerda {
-				background-color: #808080;
-				height: 540px;
-				width: 180px;
-				text-align: right;
-				float: left;
+			#barrinha {
+				display: flex;
+				justify-content: center;
+				justify: space-between;
+				background: #FFFF3F;
+				height: 20px;
+				width: 100%;
+				text-align: center;
+				font-size: 20px;
 			}
 			
 			#conteudo {
-				background-color: #1E90FF;
-				height:540px;
-				width: 840px;
+				background: linear-gradient(rgba(57, 20, 175, 0.623),rgba(33, 7, 114, 0.781) );		
+				height: 607px;
+				width: 100%;
 				color: white;
 				font-family: calibri;
 				font-size: 15px;
 				text-align: center;
 				float: right;
 			}
+			
 			
 			.titulo {
 				font-size: 20px;
@@ -50,184 +65,27 @@
 			}	
 			
 			#principal {
-				width: 1024px;
+				width: 1440px;
+				height: 100%;
 				margin: 0px auto;
+				border: 0px;
 			}
 			
 			body {
 				margin: 0px;
 				background: url(img/fundo.jpg);
 				background-size: cover;
+				border: 0px;
 			}
 			
 			#nomePagina {
-				text-align:center;
+				display: flex;
+				justify-content: center;
 				margin: 0px ;
-				font-family: verdana;
-				font-size: 25px;
-				color: purple;
-			}
-			
-			#logo {
-				position: absolute; 
-				top: 16px;
-				width: 180px;
 				height: 118px;
 			}
 			
-			#logo_rodape {
-				position: relative;
-				top: -1px;
-				width: 81px;
-				height: 45px;
-			}
-			
-			#logo_fale {
-				height: 21px;
-				width: 21px;
-			}
-			
-			#faleConosco_ {
-				border: 0px;
-				position: relative;
-				left: 0px;
-				font-family: Harlow Solid;
-				font-size: 20px;
-				color: black;
-				background: rgba(0, 0, 0, 0.0);
-			}
-			
-			#dicas_ {
-				border: 0px;
-				position: relative;
-				left: 0px;
-				font-family: Harlow Solid;
-				font-size: 20px;
-				color: black;
-				background: rgba(0, 0, 0, 0.0);
-			}
-			
-			#logo_dicas {
-				height: 21px;
-				width: 21px;
-			}
-			
-			#cruzeiros_ {
-				border: 0px;
-				position: relative;
-				left: 0px;
-				font-family: Harlow Solid;
-				font-size : 20px;
-				color: black;
-				background: rgba(0, 0, 0, 0.0);
-			}
-			
-			#logo_cruzeiros {
-				height: 21px;
-				width: 21px;
-			}
-			
-			#pacotes_ {
-				border: 0px;
-				position: relative;
-				left: 0px;
-				widht: 158px;
-				font-family: Harlow Solid;
-				font-size: 20px;
-				color: black;
-				background: rgba(0, 0, 0, 0.0);
-			}
-			
-			#logo_pacotes {
-				height: 21px;
-				width: 21px;
-			}
-			
-			#hospedagem_ {
-				border: 0px;
-				position: relative;
-				left: 0px;
-				font-family: Harlow Solid;
-				font-size: 20px;
-				color: black;
-				background: rgba(0, 0, 0, 0.0);
-			}
-			
-			#logo_hospedagem {
-				height: 21px;
-				width: 21px;
-			}
-			
-			#voos_ {
-				border: 0px;
-				position: relative;
-				left: -2px;
-				font-family: Harlow Solid;
-				font-size: 20px;
-				color: black;
-				background: rgba(0, 0, 0, 0.0);
-			}
-		
-			#logo_voos {
-				height: 21px;
-				width: 21px;
-			}
-			
-			#faleConosco_rodape {
-				border: 0px;
-				position: relative;
-				left: -4px;
-				top: 5px;
-				float: right;
-				font-family: Harlow Solid;
-				font-size: 20px;
-				color: white;
-				background: rgba(0, 0, 0, 0.0);
-			}
-			
-			#instagram_rodape {
-				clear: both;
-				position: relative;
-				top: -19px;
-				left: 765px;
-				border: 0px;
-				background: rgba(0, 0, 0, 0.0);
-			}
-			
-			#logo_insta {
-				height: 39px;
-			}
-			
-			#whatsapp_rodape {
-				position: relative;
-				top: -19px;
-				left: 654px;
-				border: 0px;
-				background: rgba(0, 0, 0, 0.0);
-			}
-			
-			#logo_whats {
-				height: 39px;
-			}
-			
-			#cruzeiro_conteudo {
-				background: black;
-				width: 280px;
-				height: 242px;
-				position: relative;
-				top: 60px;
-				left: 70px;
-			}
-			
-			#hospedagem_conteudo {
-				background: black;
-				width: 280px;
-				height: 242px;
-				position: relative;
-				top: -184px;
-				left: 480px;
-			}
-			
+
 			a {color:inherit;}
 			
 			a.classe1:link, a:visited, a:hover, a:active{
@@ -238,101 +96,166 @@
 				overflow: auto;
 			}
 			
-			#hospedagem2_conteudo {
-				background: black;
-				width: 280px;
-				height: 242px;
-				position: relative;
-				top: -324px;
-				left: 480px;
+			.tela_{
+				background: pink;
+				 width: 400px; 
+				 height: 400px;
+					
 			}
 			
-			#cruzeiro2_conteudo {
-				background: black;
-				width: 280px;
-				height: 242px;
-				position: relative;
-				top: -80px;
-				left: 70px;
+			.btnEsquerda{
+				border: 0px;
+				font-family: Calibri;
+				font-size: 20px;
+				color: #BF3082;
+				background: rgba(0, 0, 0, 0.0);
+				padding-left: 10px;
+				font-weight: bold;		
 			}
 			
+			.botaoEsquerda {
+				position: relative;
+				top: -10px;	
+			}
+			
+			#login{
+				float: right;
+				position: relative;
+				top: 7px;
+				right: 10px;
+				border: 2px solid #049DD9;
+				border-radius: 24px;
+				transition: 0.25s;
+				text-allign: center;
+			}
+			
+			#login:hover{
+				border-color: #FE640B;
+			}
 		</style>
 	</head>
 	<body>
 		<div id="principal">
-			<div id="parteSuperior">
-			</div>
 			<div id="cabecalho">
 			
-			<a href="index.jsp">
-			<img src="img\Logo.png" id="logo">
-			</a>	
+				<a href="index.jsp">
+				<img src="img\Logo.png" id="logo">
+				</a>	
+				
 				<span id="nomePagina">
-					<h1>Toy Kingdon</h1>
+					<img src="img/NomePag.png" id="nomePagina">
 				</span>	
-				
+					
+			</div>	
 			
-				
-				
-			</div>
-			
-		    <div id="paginas_lateralEsquerda">
-				<span id="faleConosco">
-					<button id="faleConosco_">
-						<a href="incluir.jsp"  class="classe1"> 
-						Incluir
+		    <div id="barrinha">
+		   	 
+				 <span id="listar" class="botaoEsquerda">
+					<button id="listar_" class="btnEsquerda">
+						<a 	href="ServletBrinquedo?cmd=listar" class="classe1" id="teste">
+						Brinquedos
 						</a>
-					</button>
+					</button>	
 				</span>
 				
-				<br><br>
+				<br><br>		
 				
-				<span id="dicas">
-					<button id="dicas_">
-						<a href="atualizar.jsp"  class="classe1">
-						Atualizar
+				<span id="educativos" class="botaoEsquerda">
+					<button id="educativos_" class="btnEsquerda">
+						<a href="ServletBrinquedo?cmd=cat&categoria=educativos" class="classe1 id="teste">
+						Brinquedos Educativos
 						</a>
 					</button>	
 				</span>
 				
 				<br><br>
 				
-				<span id="cruzeiros">
-					<button id="cruzeiros_">
-						<a href="consultar.jsp"  class="classe1">
-						Consultar
+				<span id="pelucia" class="botaoEsquerda">
+					<button id="pelucia_" class="btnEsquerda">
+						<a href="ServletBrinquedo?cmd=cat&categoria=pelucia" class="classe1 id="teste">
+						Bichos de Pelúcia
 						</a>
 					</button>	
 				</span>
 				
 				<br><br>
 				
-				<span id="pacotes">
-					<button id="pacotes_">
-						<a href="excluir.jsp"  class="classe1"> 
-						Excluir
+				<span id="bonecas" class="botaoEsquerda">
+					<button id="bonecas_" class="btnEsquerda">
+						<a href="ServletBrinquedo?cmd=cat&categoria=bonecas" class="classe1 id="teste">
+						Bonecas
 						</a>
 					</button>	
 				</span>
 				
 				<br><br>
 				
-				  <span id="hospedagem">
-					<button id="hospedagem_">
-						<a href="ServletBrinquedo?cmd=listar" class="classe1 id="teste">
-						Listar
+				<span id="aventura" class="botaoEsquerda">
+					<button id="aventura_" class="btnEsquerda">
+						<a href="ServletBrinquedo?cmd=cat&categoria=aventura" class="classe1 id="teste">
+						Aventura
+						</a>
+					</button>		
+				</span>
+				
+				<br><br>
+				
+				<span id="acao" class="botaoEsquerda">
+					<button id="acao_" class="btnEsquerda">
+						<a href="ServletBrinquedo?cmd=cat&categoria=acao" class="classe1 id="teste">
+						Ação
 						</a>
 					</button>	
 				</span>
+				
+				<br><br>
+				
+				<span id="carros" class="botaoEsquerda">
+					<button id="carros_" class="btnEsquerda">
+						<a href="ServletBrinquedo?cmd=cat&categoria=carros" class="classe1 id="teste">
+						Carros
+						</a>
+					</button>	
+				</span>
+				
+				<br><br>
+				
+				<span id="jogos" class="botaoEsquerda">
+					<button id="jogos_" class="btnEsquerda">
+						<a href="ServletBrinquedo?cmd=cat&categoria=tabuleiro" class="classe1 id="teste">
+						Jogos de Tabuleiro
+						</a>
+					</button>	
+				</span>
+				
+				<br><br>
+				
+				<span id="games" class="botaoEsquerda">
+					<button id="games_" class="btnEsquerda">
+						<a href="ServletBrinquedo?cmd=cat&categoria=games" class="classe1 id="teste">
+						Games
+						</a>
+					</button>	
+				</span>
+	
 					
 			</div>
 			
 			<div id="conteudo" >
-				
+				<!--  <div class="tela_">
+				</div>-->
 			</div>
 			
 			<div id="rodape">
 				<img src="img\LogoRodape.png" id="logo_rodape">
+				
+				<span id="login">
+					<button id="login_" class="btnEsquerda">
+						<a href="Login.jsp?s=ok"  class="classe1"> 
+						Login
+						</a>
+					</button>
+				</span>
 			</div>
 		</div>
 	</body>

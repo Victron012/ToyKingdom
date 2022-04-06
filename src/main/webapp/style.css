@@ -1,0 +1,124 @@
+@charset "ISO-8859-1";
+
+
+.box{
+	width: 300px;
+	padding: 40px;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	background-color: #6D1782;
+}
+
+.box h1{
+	color: white;
+	text-transform: uppercase;
+	font-weight: 500;
+}
+
+.box input[type = "text"],.box input[type ="password"]{
+	border:0;
+	background: none;
+	display: block;
+	margin: 20px auto;
+	text-align: center;
+	border: 2px solid #049DD9;
+	padding: 14px 10px;
+	width: 200px;
+	outline: none;
+	color: white;
+	border-radius: 24px;
+	transition: 0.25s;
+}
+
+.box input[type = "text"]:focus,.box input[type ="password"]:focus{
+	border-color: #FE640B;
+	
+}
+
+.box input[type = "submit"]{
+	border:0;
+	background: none;
+	display: block;
+	margin: 20px auto;
+	text-align: center;
+	border: 2px solid  #049DD9;
+	padding: 14px 10px;
+	width: 200px;
+	outline: none;
+	color: white;
+	border-radius: 24px;
+	transition: 0.25s;
+	cursor: pointer;
+}	
+
+.box input[type= "submit"]:hover{
+	border-color: #FE640B;	
+}
+
+.botao{
+	border:0;
+	background: none;
+	display: block;
+	margin: 20px auto;
+	text-align: center;
+	border: 2px solid  #049DD9;
+	padding: 14px 10px;
+	width: 200px;
+	outline: none;
+	color: black;
+	border-radius: 24px;
+	transition: 0.25s;
+	cursor: pointer;
+	font-size: 20px;
+}	
+
+.botao:hover{
+	border-color: #FE640B;	
+}
+
+.btnEsquerda{
+	border: 0px;
+	font-family: Calibri;
+	font-size: 20px;
+	color: black;
+	background: rgba(0, 0, 0, 0.0);
+}
+
+.campo{
+	border: 0;
+	background: none;
+	display: block;
+	margin: 20px;
+	text-align: center;
+	border: 2px solid #049DD9;
+	padding: 14px 10px;
+	width: 180px;
+  	outline: none;
+	color: black;
+	border-radius: 24px;
+	transition: 0.25s;
+}
+
+.campo:focus, .campoImg:hover{
+	border-color: #FE640B;
+				
+}
+			
+.campoImg{
+	border: 0;
+	background: rgba(0, 0, 0, 0.0);
+	display: block;
+	margin: 20px;
+	text-align: center;
+	border: 2px solid #049DD9;
+	padding: 14px 10px;
+	width: 540px;
+	height: 200px;
+	outline: none;
+	color: black;
+	border-radius: 24px;
+	transition: 0.25s;
+}
